@@ -23,7 +23,7 @@
     object-fit: cover;
     border-radius: 50%;
     border: 6px solid #ffffff;
-    box-shadow: 0 4px 15px rgba(66, 107, 155, 0.15); /* 帶有主色的柔和陰影 */
+    box-shadow: 0 4px 15px rgba(66, 107, 155, 0.15);
 }
 
 .author-quote blockquote {

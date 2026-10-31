@@ -1,13 +1,12 @@
 /* ==============================
-   base.css｜全站共用樣式（v2：奶油底＋襯線標題＋拱形造型）
-   主色維持 #426b9b，其餘色彩皆由主色衍生
+   base.css｜全站共用樣式
    ============================== */
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap");
 
 /* 1. 設計變數 */
 :root {
-    --primary: #426b9b;        /* 主色（保留） */
+    --primary: #426b9b;        /* 主色 */
     --primary-dark: #2e507c;
     --primary-soft: #dfe8f3;   /* 主色的淡色 */
     --primary-mist: #c5d5e8;
@@ -30,12 +29,12 @@
 
 /* 2. 全域圖片防爆走設定 */
 img {
-    max-width: 100%; /* 限制所有圖片的寬度絕對不能超過它的父容器 */
-    height: auto;    /* 讓圖片照比例縮放，不會變形 */
+    max-width: 100%;
+    height: auto;
     display: block;
 }
 
-/* 2. 基本設定 */
+/* 3. 基本設定 */
 * {
     margin: 0;
     padding: 0;
@@ -60,7 +59,7 @@ h3 {
     font-weight: 600;
 }
 
-/* 3. 導覽列 */
+/* 4. 導覽列 */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -100,7 +99,7 @@ h3 {
     border-bottom-color: var(--primary);
 }
 
-/* 4. 頁尾 */
+/* 5. 頁尾 */
 .footer {
     padding: 22px;
     text-align: center;
@@ -110,12 +109,11 @@ h3 {
     letter-spacing: 1px;
 }
 
-/* 5. 麵包屑（履歷、專題、自傳頁使用） */
+/* 6. 麵包屑（履歷、專題、自傳頁使用） */
 .breadcrumb {
     padding: var(--space-md) var(--space-xl);
     font-size: 0.9rem;
     color: var(--color-text-muted);
-    /* 已經把 position: sticky 等固定的語法都刪除了 */
 }
 
 .breadcrumb a {
@@ -127,7 +125,7 @@ h3 {
     text-decoration: underline;
 }
 
-/* 6. 共用裝飾元件 */
+/* 7. 共用裝飾元件 */
 
 /* 手繪波浪底線：加在 h1／h2 上，需搭配 display:inline-block */
 .scribble {
@@ -179,7 +177,7 @@ h3 {
     color: var(--primary-dark);
 }
 
-/* 7. 專題頁與自傳頁共用：主容器、標題區 */
+/* 8. 專題頁與自傳頁共用：主容器、標題區 */
 .portfolio-container,
 .autobio-container {
     max-width: 1200px;
@@ -228,7 +226,7 @@ h3 {
     color: var(--muted);
 }
 
-/* 8. 無障礙：鍵盤焦點外框 */
+/* 9. 無障礙：鍵盤焦點外框 */
 a:focus-visible,
 summary:focus-visible {
     outline: 3px solid var(--primary);
@@ -236,7 +234,7 @@ summary:focus-visible {
     border-radius: 6px;
 }
 
-/* 9. 手機版 */
+/* 10. 手機版 */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -268,7 +266,7 @@ summary:focus-visible {
     }
 }
 
-/* 10. 尊重使用者「減少動態效果」的系統設定 */
+/* 11. 尊重使用者「減少動態效果」的系統設定 */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
@@ -279,18 +277,18 @@ summary:focus-visible {
     }
 }
 
-/* --- 新增：固定導覽列與最高層級 --- */
+/* 固定導覽列 */
 site-navbar {
     display: block;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 9999; /* 確保在最上層 */
+    z-index: 9999;
 }
 
-/* 確保原有的 navbar 有背景色，才不會跟下方文字重疊 */
+/* 導覽列背景與陰影，避免與下方內容重疊 */
 .navbar {
-    background-color: #f6f4ee; /* 妳可以換成妳截圖中的米色色碼 */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* 加一點點陰影區隔 */
+    background-color: #f6f4ee;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }

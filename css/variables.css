@@ -1,6 +1,6 @@
 /* css/variables.css */
 :root {
-    /* 核心色彩系統 (參考截圖視覺) */
+    /* 核心色彩系統 */
     --color-primary: #3b6b9a;       /* 藍色色塊與主視覺文字藍色 */
     --color-primary-dark: #2a5278;  /* 深藍色 (hover 使用) */
     --color-text-main: #222222;     /* 主要深色文字 */

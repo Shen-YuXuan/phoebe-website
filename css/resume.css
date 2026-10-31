@@ -1,27 +1,27 @@
 /* ==============================
-   resume.css｜個人履歷頁（resume.html）專用樣式（v2）
+   resume.css｜個人履歷頁（resume.html）專用樣式
    ============================== */
 
 /* 履歷主容器 */
 .resume-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 80px 24px 70px; /* 關鍵：這裡改成 80px，與導覽列高度一致 */
+    padding: 80px 24px 70px; /* 上方留出固定導覽列的高度 */
 }
 
 /* ==========================================================
-   新增：麵包屑固定設定
+   麵包屑（固定在導覽列下方）
    ========================================================== */
 .breadcrumb {
     font-size: 0.9rem;
     color: var(--color-text-muted);
     
     position: sticky;
-    top: 80px; /* 數字跟上方 padding 一樣，就不會產生滑動落差 */
+    top: 80px; /* 黏在導覽列正下方 */
     background-color: var(--cream); 
     z-index: 998; 
     border-bottom: 1px solid var(--line); 
-    padding: 16px 0;  /* 麵包屑自身的上下留白 */
+    padding: 16px 0;
 }
 
 .breadcrumb a {
@@ -39,7 +39,7 @@
     grid-template-columns: 320px minmax(0, 1fr); 
     align-items: start; 
     gap: 50px; 
-    margin-top: 30px; /* 關鍵：把下方的履歷佈局往下推 */
+    margin-top: 30px;
 }
 
 /* ==========================================================
@@ -137,7 +137,7 @@
    ========================================================== */
 .resume-heading {
     margin-bottom: 36px;
-    padding-top: 10px; /* 為了對齊左側卡片視覺做微調 */
+    padding-top: 10px;
 }
 
 .resume-eyebrow {

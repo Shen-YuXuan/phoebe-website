@@ -1,5 +1,3 @@
-// js/components.js
-
 // 1. 導覽列 Web Component
 class SiteNavbar extends HTMLElement {
     connectedCallback() {
@@ -48,14 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     accordions.forEach(acc => {
         acc.addEventListener('toggle', function() {
-            // 確保只有在「打開」狀態下才執行滑動
             if (this.open) {
-                // 稍微延遲 0.15 秒，讓內容完全向下撐開後再計算高度
+                // 延遲一下，等內容完全展開後再捲動
                 setTimeout(() => {
-                    // 導覽列是固定在最上方的，要把它的高度加進去，標題才不會被擋住
+                    // 固定導覽列與麵包屑會遮住標題，捲動時要把它們的高度扣掉
                     const nav = document.querySelector('site-navbar');
                     const navHeight = nav ? nav.getBoundingClientRect().height : 0;
-                    // 麵包屑也是黏在導覽列下方的，一併扣掉
                     const crumb = document.querySelector('.breadcrumb');
                     const crumbHeight = crumb ? crumb.getBoundingClientRect().height : 0;
                     this.style.scrollMarginTop = (navHeight + crumbHeight + 16) + 'px';
