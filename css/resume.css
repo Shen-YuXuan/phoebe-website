@@ -176,6 +176,7 @@
 
 /* 手風琴外框 */
 .resume-accordion {
+    scroll-margin-top: 200px; /* 備用值：實際高度由 components.js 依導覽列計算 */
     overflow: hidden;
     background-color: var(--paper);
     border: 1px solid var(--line);

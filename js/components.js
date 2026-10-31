@@ -42,7 +42,7 @@ class SiteFooter extends HTMLElement {
 }
 customElements.define('site-footer', SiteFooter);
 
-// 自動將展開的履歷區塊滑動至畫面中間
+// 自動將展開的履歷區塊標題對齊畫面上方
 document.addEventListener('DOMContentLoaded', () => {
     const accordions = document.querySelectorAll('.resume-accordion');
     
@@ -52,9 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
             if (this.open) {
                 // 稍微延遲 0.15 秒，讓內容完全向下撐開後再計算高度
                 setTimeout(() => {
+                    // 導覽列是固定在最上方的，要把它的高度加進去，標題才不會被擋住
+                    const nav = document.querySelector('site-navbar');
+                    const navHeight = nav ? nav.getBoundingClientRect().height : 0;
+                    // 麵包屑也是黏在導覽列下方的，一併扣掉
+                    const crumb = document.querySelector('.breadcrumb');
+                    const crumbHeight = crumb ? crumb.getBoundingClientRect().height : 0;
+                    this.style.scrollMarginTop = (navHeight + crumbHeight + 16) + 'px';
                     this.scrollIntoView({ 
                         behavior: 'smooth', 
-                        block: 'center' // 強制將該區塊停在螢幕正中間
+                        block: 'start' // 讓該區塊的標題對齊畫面上方
                     });
                 }, 150); 
             }
