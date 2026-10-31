@@ -1,0 +1,304 @@
+/* ==============================
+   projects.css｜專題作品頁（projects.html）專用樣式（v2）
+   （主容器與標題區在 base.css）
+   ============================== */
+
+/* 主要作品卡片 */
+.project-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+}
+
+.project-card {
+    overflow: hidden;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
+.project-image {
+    position: relative;
+    background: var(--primary-soft);
+}
+
+.project-image img {
+    display: block;
+    width: 100%;
+    max-height: 480px;
+    aspect-ratio: 16 / 7;
+    object-fit: cover;
+}
+
+.project-image-label {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    padding: 5px 16px;
+    border-radius: 999px;
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.project-body {
+    padding: 34px;
+}
+
+.project-category {
+    margin-bottom: 8px;
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.project-body h2 {
+    margin-bottom: 16px;
+    font-size: clamp(22px, 3vw, 30px);
+    line-height: 1.5;
+}
+
+.project-body h3 {
+    margin: 28px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--line);
+    font-size: 17px;
+    color: var(--primary);
+}
+
+.project-intro {
+    color: #4a525e;
+    line-height: 1.9;
+}
+
+.project-details {
+    padding-left: 22px;
+    color: #4a525e;
+}
+
+.project-details li {
+    margin-bottom: 10px;
+}
+
+.project-details strong {
+    color: var(--ink);
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-tags span {
+    padding: 4px 14px;
+    border: 1px solid var(--primary);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--primary-dark);
+    font-size: 13px;
+}
+
+.project-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+}
+
+.project-status {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* 獎項標章 */
+.award-badge {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: var(--primary-soft);
+    border: 1px solid var(--primary-mist);
+    color: var(--deep);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.award-badge.small {
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+/* 更多作品 */
+.more-projects {
+    margin-top: 72px;
+    text-align: center;
+}
+
+.more-projects > h2 {
+    margin: 8px 0 32px;
+    font-size: 30px;
+    color: var(--primary);
+}
+
+.mini-project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    text-align: left;
+}
+
+.mini-project {
+    display: flex;
+    flex-direction: column;
+    padding: 28px 26px 26px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--primary);
+    border-radius: 0 0 8px 8px;
+    transition: transform 0.3s;
+}
+
+.mini-project:hover {
+    transform: translateY(-4px);
+}
+
+.mini-project h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.mini-project > p:not(.project-category):not(.award-badge) {
+    margin-bottom: 16px;
+    color: #4a525e;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.mini-project .project-tags {
+    margin-top: auto;
+}
+
+/* 專題成長卡片 */
+.project-summary {
+    margin-top: 80px;
+    padding: 64px 5% 70px;
+    background: var(--deep);
+    border-radius: 8px;
+    color: var(--cream);
+    text-align: center;
+}
+
+.project-summary .portfolio-eyebrow {
+    color: var(--primary-mist);
+}
+
+.project-summary > h2 {
+    margin: 8px 0 40px;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.growth-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 36px;
+    text-align: left;
+}
+
+.growth-card {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.growth-icon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+    border-radius: 50%;
+    background: var(--primary);
+    border: 3px double var(--deep);
+    box-shadow: 0 0 0 1.5px var(--primary);
+    color: #ffffff;
+    font-family: var(--serif);
+    font-weight: bold;
+}
+
+.growth-card h3 {
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+
+.growth-card p {
+    color: #c3cedd;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* css/projects.css 最下方加入這段 */
+/* ==========================================================
+   修正：專案技能標籤 (去除黑點、改為膠囊狀)
+   ========================================================== */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;       /* 讓標籤超過寬度時自動換行 */
+    gap: 10px;             /* 標籤間距 */
+    list-style: none;      /* 移除預設的黑點 */
+    padding: 0;
+    margin-top: 16px;
+}
+
+.project-tags li {
+    background-color: var(--paper, #fbf9f4); 
+    color: var(--primary, #426b9b);            
+    padding: 6px 14px;         
+    border-radius: 999px;      
+    font-size: 0.85rem;
+    border: 1px solid var(--line, #d9d2c3); 
+    white-space: nowrap;       
+    transition: all 0.2s ease; 
+}
+
+.project-tags li:hover {
+    background-color: var(--primary, #426b9b); 
+    color: #ffffff;
+}
+
+/* 平板版 */
+@media (max-width: 900px) {
+    .growth-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* 手機版 */
+@media (max-width: 600px) {
+    .project-body {
+        padding: 24px 18px;
+    }
+
+    .project-image img {
+        aspect-ratio: 4 / 3;
+    }
+
+    .mini-project-grid,
+    .growth-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .project-summary {
+        padding: 44px 20px 48px;
+    }
+
+    .project-summary > h2,
+    .more-projects > h2 {
+        font-size: 24px;
+    }
+}

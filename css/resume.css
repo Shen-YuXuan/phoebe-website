@@ -1,0 +1,455 @@
+/* ==============================
+   resume.css｜個人履歷頁（resume.html）專用樣式（v2）
+   ============================== */
+
+/* 履歷主容器 */
+.resume-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px 70px; /* 關鍵：這裡改成 80px，與導覽列高度一致 */
+}
+
+/* ==========================================================
+   新增：麵包屑固定設定
+   ========================================================== */
+.breadcrumb {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    
+    position: sticky;
+    top: 80px; /* 數字跟上方 padding 一樣，就不會產生滑動落差 */
+    background-color: var(--cream); 
+    z-index: 998; 
+    border-bottom: 1px solid var(--line); 
+    padding: 16px 0;  /* 麵包屑自身的上下留白 */
+}
+
+.breadcrumb a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* 左右兩欄佈局 */
+.resume-layout {
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr); 
+    align-items: start; 
+    gap: 50px; 
+    margin-top: 30px; /* 關鍵：把下方的履歷佈局往下推 */
+}
+
+/* ==========================================================
+   左側個人簡介卡片 (Profile Card)
+   ========================================================== */
+.resume-sidebar {
+    position: sticky;
+    /* 導覽列(80px) + 麵包屑(約50px) + margin-top(30px) = 160px */
+    top: 160px; 
+    width: 100%;
+}
+
+.myphoto-card {
+    background-color: #ffffff; 
+    padding: 20px 24px;        
+    border-radius: 12px;       
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+    text-align: center;        
+}
+
+.myphoto-photo {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;         
+    border-radius: 50%;        
+    margin: 0 auto 20px auto;  
+    border: 4px solid #f6f4ee; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.myphoto-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+    color: var(--primary); 
+}
+
+.myphoto-subtitle {
+    font-size: 0.9rem;
+    color: #666666;
+}
+
+.myphoto-divider {
+    height: 1px;
+    background-color: var(--line);
+    margin: 24px 0;
+}
+
+.myphoto-card h3 {
+    text-align: left;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: var(--primary);
+}
+
+.myphoto-description {
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #4a525e;
+    margin-bottom: 24px;
+}
+
+.myphoto-contact ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    font-size: 0.85rem;
+}
+
+.myphoto-contact li {
+    margin-bottom: 12px;
+    color: #4a525e;
+    word-break: break-all; /* 防止 email 過長超出邊界 */
+}
+
+.back-home {
+    display: block;
+    margin-top: 22px;
+    padding: 10px;
+    border: 1px solid var(--primary);
+    border-radius: 999px;
+    color: var(--primary);
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.back-home:hover {
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+/* ==========================================================
+   右側履歷內容區
+   ========================================================== */
+.resume-heading {
+    margin-bottom: 36px;
+    padding-top: 10px; /* 為了對齊左側卡片視覺做微調 */
+}
+
+.resume-eyebrow {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.resume-heading h1 {
+    position: relative;
+    display: inline-block;
+    margin: 8px 0 22px;
+    font-size: 40px;
+    color: var(--ink);
+}
+
+.resume-heading h1::after {
+    content: "";
+    position: absolute;
+    left: -6%;
+    right: -6%;
+    bottom: -10px;
+    height: 12px;
+    background: var(--scribble) center / 100% 100% no-repeat;
+}
+
+.resume-heading > p:last-child {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.resume-section {
+    margin-bottom: 14px;
+}
+
+/* 手風琴外框 */
+.resume-accordion {
+    overflow: hidden;
+    background-color: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
+.resume-accordion summary {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+    cursor: pointer;
+    list-style: none;
+    transition: background-color 0.3s;
+}
+
+.resume-accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.resume-accordion summary:hover {
+    background-color: var(--cream);
+}
+
+/* 分類編號：圓形徽章 */
+.section-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    border: 3px double var(--paper);
+    box-shadow: 0 0 0 1.5px var(--primary);
+    color: #ffffff;
+    font-family: var(--serif);
+    font-size: 14px;
+}
+
+.section-title {
+    flex: 1;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* 右側箭頭 */
+.accordion-arrow {
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+    transform: rotate(45deg);
+    transition: transform 0.3s;
+    margin-right: 4px;
+    margin-top: -5px;
+}
+
+.resume-accordion[open] .accordion-arrow {
+    transform: rotate(225deg);
+    margin-top: 5px;
+}
+
+.accordion-content {
+    padding: 10px 26px 30px;
+    border-top: 1px solid var(--line);
+}
+
+/* 個人資訊格狀排列 */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    padding-top: 14px;
+}
+
+.info-item dt {
+    color: var(--primary);
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.info-item dd {
+    margin-top: 4px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+    font-weight: 500;
+    overflow-wrap: anywhere;
+}
+
+/* 時間軸 */
+.timeline-item {
+    position: relative;
+    padding: 8px 0 12px 26px;
+    border-left: 2px solid var(--primary-mist);
+}
+
+.timeline-item + .timeline-item {
+    margin-top: 12px;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 14px;
+    left: -7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    border: 2px solid var(--paper);
+    box-shadow: 0 0 0 2px var(--primary-mist);
+}
+
+.timeline-label {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.timeline-item h3 {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.timeline-item > p:not(.timeline-label) {
+    color: #4a525e;
+    font-size: 14px;
+}
+
+.timeline-date {
+    display: block;
+    margin-top: 8px;
+    color: var(--muted) !important;
+    font-size: 12px !important;
+}
+
+.experience-list {
+    margin: 12px 0 0 18px;
+    color: #4a525e;
+    font-size: 14px;
+}
+
+/* 證照列表 */
+.cert-list {
+    list-style: none;
+    padding-top: 4px;
+}
+
+.cert-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    background: var(--cream);
+    border-left: 4px solid var(--primary);
+    border-radius: 4px;
+}
+
+.cert-list strong {
+    color: var(--ink);
+}
+
+.cert-list span {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ==========================================================
+   技能標籤 (膠囊狀)
+   ========================================================== */
+.skill-heading {
+    margin: 20px 0 12px;
+    font-size: 16px;
+    color: var(--primary);
+}
+
+.skill-heading:first-child {
+    margin-top: 14px;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;       
+    gap: 10px;             
+    list-style: none;      
+    padding: 0;
+    margin: 0 0 24px 0;    
+}
+
+.skill-tags li {
+    background-color: #f0f4f8; 
+    color: var(--primary);            
+    padding: 6px 16px;         
+    border-radius: 999px;      
+    font-size: 0.9rem;
+    border: 1px solid #dce4eb; 
+    white-space: nowrap;       
+    transition: all 0.2s ease-in-out; 
+}
+
+.skill-tags li:hover {
+    background-color: var(--primary); 
+    color: #ffffff;
+}
+
+/* ==========================================================
+   RWD 平板與手機版
+   ========================================================== */
+@media (max-width: 900px) {
+    .resume-layout {
+        grid-template-columns: 240px minmax(0, 1fr);
+        gap: 24px;
+    }
+
+    .myphoto-card {
+        padding: 28px 16px 24px;
+    }
+
+    .myphoto-photo {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+@media (max-width: 680px) {
+    .resume-container {
+        padding: 100px 14px 44px; /* 手機版一樣要留上方導覽列空間 */
+    }
+
+    .resume-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .resume-sidebar {
+        position: static; /* 手機版取消固定，避免擋住內容 */
+    }
+
+    .myphoto-card {
+        padding: 28px 24px;
+    }
+
+    .resume-heading {
+        text-align: center;
+    }
+
+    .resume-heading h1 {
+        font-size: 32px;
+    }
+
+    .resume-accordion summary {
+        padding: 14px;
+        gap: 10px;
+    }
+
+    .section-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .section-title {
+        font-size: 16px;
+    }
+
+    .accordion-content {
+        padding: 8px 16px 24px;
+    }
+
+    .info-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+}

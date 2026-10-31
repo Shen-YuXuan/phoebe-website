@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="沈玉璇 Phoebe 的專題作品：ICOPE 影像辨識輔助系統（全國第一名）、雙重驗證智慧保險箱、電商比價系統、教育互動 App 與智眠守護床企劃。">
+    <title>專題作品｜沈玉璇 Phoebe</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <script src="js/components.js" defer></script>
+</head>
+<body>
+
+    <site-navbar></site-navbar>
+
+    <main class="portfolio-container">
+        <nav class="breadcrumb" aria-label="麵包屑導覽">
+            <a href="index.html">首頁</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">專題作品</span>
+        </nav>
+
+        <section class="portfolio-hero">
+            <p class="portfolio-eyebrow">MY PROJECTS</p>
+            <h1>專題作品</h1>
+            <p>結合軟體、AI 模型與硬體感測技術，將課堂知識轉化為解決實際問題的應用。</p>
+        </section>
+
+        <!-- 主要作品 -->
+        <section class="project-list">
+            <article class="project-card">
+                <!-- 語意化：使用 figure 與 figcaption -->
+                <figure class="project-image">
+                    <img src="images/icope.png" alt="基於影像辨識之 ICOPE 輔助系統專題畫面" loading="lazy">
+                    <figcaption class="project-image-label">畢業專題</figcaption>
+                </figure>
+
+                <div class="project-body">
+                    <p class="project-category">AI 人工智慧・智慧健康照護</p>
+                    <h2>基於影像辨識之 ICOPE 輔助系統</h2>
+                    <p class="award-badge" role="status">2025 USR 智慧醫護創新科技全國應用大賽｜第一名</p>
+                    
+                    <p class="project-intro">
+                        本專題旨在提供高齡者友善且穩定的功能評估輔助方式，
+                        運用 Python 與 MediaPipe 追蹤骨架關鍵點，打造非接觸式的健康評估工具。
+                    </p>
+
+                    <h3>專題目標</h3>
+                    <ul class="project-details">
+                        <li><strong>視力評估：</strong>透過手指方向辨識，協助進行視力測試流程。</li>
+                        <li><strong>動作評估：</strong>運用人體姿態資訊，分析坐站等動作表現。</li>
+                        <li><strong>友善操作：</strong>以圖形化介面整合測試流程與結果呈現。</li>
+                    </ul>
+
+                    <h3>使用技術</h3>
+                    <ul class="project-tags" aria-label="技術標籤">
+                        <li>Python</li><li>OpenCV</li><li>MediaPipe</li>
+                        <li>影像辨識</li><li>人體姿態估測</li>
+                    </ul>
+
+                    <h3>開發內容與學習成果</h3>
+                    <p class="project-intro">
+                        開發過程涵蓋影像擷取、手部方向判斷、人體姿態分析、測試流程設計與介面整合。
+                        透過模組化開發與團隊協作，累積程式除錯、功能整合及問題分析的實作經驗。
+                    </p>
+
+                    <div class="project-footer">
+                        <span class="project-status">團隊專題・全國競賽第一名</span>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 其他作品 -->
+        <section class="more-projects">
+            <p class="portfolio-eyebrow">MORE WORKS</p>
+            <h2>更多實作與企劃</h2>
+            
+            <div class="mini-project-grid">
+                <article class="mini-project">
+                    <p class="project-category">物聯網・嵌入式系統｜課堂實作</p>
+                    <h3>雙重驗證智慧保險箱</h3>
+                    <p>以 Arduino 作為核心控制器，整合實體指撥開關密碼與手機藍牙數位鑰匙，並搭配光敏電阻與蜂鳴器，設計主動式防盜警報系統。</p>
+                    <ul class="project-tags">
+                        <li>Arduino</li><li>C</li><li>藍牙通訊</li><li>光敏電阻</li><li>蜂鳴器</li>
+                    </ul>
+                </article>
+
+                <article class="mini-project">
+                    <p class="project-category">資料工程・網頁爬蟲</p>
+                    <h3>多平台電商比價系統</h3>
+                    <p>使用 Python 撰寫爬蟲程式，彙整多個電商平台的商品價格，方便使用者快速比較。</p>
+                    <ul class="project-tags">
+                        <li>Python</li><li>Selenium</li>
+                    </ul>
+                </article>
+
+                <article class="mini-project">
+                    <p class="project-category">行動應用開發</p>
+                    <h3>教育互動手機 App</h3>
+                    <p>使用 Java 與 Android Studio 開發的教育互動手機 App，設計動畫回饋機制，讓學習過程更直覺有趣。</p>
+                    <ul class="project-tags">
+                        <li>Java</li><li>Android Studio</li><li>動畫回饋</li>
+                    </ul>
+                </article>
+
+                <article class="mini-project">
+                    <p class="project-category">健康科技・跨領域產品企劃</p>
+                    <h3>智眠守護床</h3>
+                    <p class="award-badge small">第六屆創出名堂全國企劃實作競賽｜銅獎</p>
+                    <p>針對嬰兒照護痛點，企劃整合雷達生理監測、夜視影像辨識與手機 App 警報的智慧床具，並完成商業模式與痛點分析。</p>
+                    <ul class="project-tags">
+                        <li>商業模式</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- 技能與經驗 -->
+        <section class="project-summary">
+            <p class="portfolio-eyebrow">WHAT I LEARNED</p>
+            <h2>專題帶給我的成長</h2>
+            <div class="growth-grid">
+                <article class="growth-card">
+                    <div class="growth-icon" aria-hidden="true">01</div>
+                    <h3>程式開發</h3>
+                    <p>練習 Python 程式撰寫、影像處理、功能測試與錯誤排除，也善用 AI 工具提升開發效率與系統穩定度。</p>
+                </article>
+                <article class="growth-card">
+                    <div class="growth-icon" aria-hidden="true">02</div>
+                    <h3>軟硬體整合</h3>
+                    <p>把軟體、AI 模型與感測器結合，並思考介面與操作流程的設計。</p>
+                </article>
+                <article class="growth-card">
+                    <div class="growth-icon" aria-hidden="true">03</div>
+                    <h3>問題解決</h3>
+                    <p>從需求分析、反覆測試到調整程式，遇到卡關或硬體除錯時，保持冷靜逐步釐清問題。</p>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <site-footer></site-footer>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="沈玉璇 Phoebe 的個人網站：資訊工程應屆畢業生，專注 AI 影像辨識、物聯網與軟硬體整合，期望擔任 AI／軟體／資安工程師。">
+    <title>沈玉璇 Phoebe｜個人網站</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/home.css">
+    
+    <!-- 引入共用 Web Components -->
+    <script src="js/components.js" defer></script>
+</head>
+<body>
+
+    <!-- 共用導覽列組件 -->
+    <site-navbar></site-navbar>
+
+    <main>
+       <div class="hero-wrapper">
+        <!-- 1. 主視覺 -->
+            <section class="home-hero">
+                <!-- 照片維持在第一行 -->
+                <img src="images/myphoto.jpg" alt="沈玉璇 Phoebe" class="hero-photo">
+                
+                <!-- 新增這層 div 包住右邊的文字與按鈕 -->
+                <div class="hero-text">
+                    <h1>你好，<span>我是沈玉璇!</span></h1>
+                    <p class="hero-tagline">我相信技術要能落地，才有價值。我專注於 AI 影像辨識、物聯網與軟硬體整合，期待把想法做成真正可用的產品。</p>
+                    <a href="#contact">聯絡我</a> <!-- 請確認妳原本的連結目標 -->
+                </div>
+            </section>
+
+            <!-- 2. 成就色塊 -->
+            <section class="band" aria-label="重點成就">
+                <dl class="band-list" style="display: contents;">
+                    <div class="band-item">
+                        <dt>全國第 1 名</dt>
+                        <dd>2025 USR 智慧醫護創新科技全國應用大賽</dd>
+                    </div>
+                    <div class="band-item">
+                        <dt>全系第 1 名</dt>
+                        <dd>臺北城市科技大學資訊工程系畢業</dd>
+                    </div>
+                    <div class="band-item">
+                        <dt>5 張</dt>
+                        <dd>技術士與資安等專業證照</dd>
+                    </div>
+                    <div class="band-item">
+                        <dt>4～5 年</dt>
+                        <dd>半工半讀的實務工作經驗</dd>
+                    </div>
+                </dl>
+            </section>
+
+        </div>
+
+        <!-- 3. 關於我 -->
+        <section class="about">
+            <div class="about-text">
+                <h2 class="oval-title">關於我</h2>
+                <p>
+                    我是資訊工程應屆畢業生，二技畢業於國立臺中科技大學，
+                    五專畢業於臺北城市科技大學。我擅長結合軟體演算法、
+                    AI 視覺模型與硬體感測技術，也習慣善用 AI 工具優化程式碼、
+                    提升開發效率。
+                </p>
+                <p>
+                    求學期間我長期半工半讀，磨練出時間管理能力與高抗壓性。
+                    如果你正在尋找能獨立解決問題、也能與團隊順暢溝通的工程師，
+                    歡迎和我聊聊。
+                </p>
+                <div class="about-links">
+                    <a href="resume.html" class="text-link">查看個人履歷</a>
+                    <a href="autobiography.html" class="text-link">閱讀自傳</a>
+                </div>
+            </div>
+            <div class="arch-photo">
+                <img src="images/myphoto.jpg" alt="沈玉璇的個人照片">
+            </div>
+        </section>
+
+        <!-- 4. 背景 (語意化：加入 time 標籤) -->
+        <section class="section">
+            <h2 class="section-heading">背景</h2>
+            <div class="circle-grid">
+                <article class="circle-item">
+                    <div class="circle-badge">二技</div>
+                    <h3>國立臺中科技大學</h3>
+                    <div class="circle-rule"></div>
+                    <p class="circle-label">資訊工程系</p>
+                    <time class="circle-date" datetime="2024/2026">2024 – 2026</time>
+                </article>
+                <article class="circle-item">
+                    <div class="circle-badge">五專</div>
+                    <h3>臺北城市科技大學</h3>
+                    <div class="circle-rule"></div>
+                    <p class="circle-label">資訊工程系・全系第一名畢業</p>
+                    <time class="circle-date" datetime="2019/2024">2019 – 2024</time>
+                </article>
+                <article class="circle-item">
+                    <div class="circle-badge">實務</div>
+                    <h3>餐飲、門市與教育工讀</h3>
+                    <div class="circle-rule"></div>
+                    <p class="circle-label">累計 4～5 年工作經驗</p>
+                    <time class="circle-date" datetime="2020/2026">2020 – 2026</time>
+                </article>
+            </div>
+        </section>
+
+        <!-- 5. 核心專長 -->
+        <section class="section section-tint">
+            <h2 class="section-heading scribble">核心專長</h2>
+            <div class="arch-grid">
+                <article class="arch-card">
+                    <div class="arch-top tone-a"><span>01</span></div>
+                    <h3>AI 與電腦視覺</h3>
+                    <p>Python、OpenCV、MediaPipe，開發非接觸式的健康評估系統。</p>
+                </article>
+                <article class="arch-card">
+                    <div class="arch-top tone-b"><span>02</span></div>
+                    <h3>物聯網與嵌入式</h3>
+                    <p>以 Arduino 與 C 整合藍牙、感測器與警報機制，打造軟硬體合一的應用。</p>
+                </article>
+                <article class="arch-card">
+                    <div class="arch-top tone-c"><span>03</span></div>
+                    <h3>資料與應用開發</h3>
+                    <p>Selenium 爬蟲、mySQL 資料庫，以及 Java／Android 行動應用開發。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 6. 專案展示 -->
+        <section class="section">
+            <h2 class="section-heading">專案展示</h2>
+            <p class="section-sub">以下是我參與的部分專題與企劃</p>
+            <div class="work-grid">
+                <a href="projects.html" class="work-item">
+                    <div class="work-tile tile-primary"><span>ICOPE<br>影像辨識<br>輔助系統</span></div>
+                    <p>智慧視力與動作評估：AI 影像辨識</p>
+                </a>
+                <a href="projects.html" class="work-item">
+                    <div class="work-tile tile-deep"><span>雙重驗證<br>智慧保險箱</span></div>
+                    <p>Arduino 與藍牙：物聯網</p>
+                </a>
+                <a href="projects.html" class="work-item">
+                    <div class="work-tile tile-sand"><span>多平台<br>電商比價系統</span></div>
+                    <p>Python 爬蟲：資料工程</p>
+                </a>
+                <a href="projects.html" class="work-item">
+                    <div class="work-tile tile-soft"><span>智眠<br>守護床</span></div>
+                    <p>嬰兒照護：產品企劃</p>
+                </a>
+            </div>
+            <a href="projects.html" class="text-link">查看全部專題作品 →</a>
+        </section>
+
+        <!-- 7. 榮譽與成就 -->
+        <section class="honors">
+            <h2 class="section-heading scribble light">榮譽與成就</h2>
+            <div class="honor-grid">
+                <article class="honor-card">
+                    <h3>「全國第一名」</h3>
+                    <p>與團隊開發智慧視力與動作評估系統，手勢與姿態辨識準確率達 98%。</p>
+                    <strong>2025 USR 智慧醫護創新科技全國應用大賽</strong>
+                </article>
+                <article class="honor-card">
+                    <h3>「全國企劃銅獎」</h3>
+                    <p>針對嬰兒照護痛點企劃智眠守護床，並完成商業模式與痛點分析。</p>
+                    <strong>第六屆創出名堂全國企劃實作競賽</strong>
+                </article>
+                <article class="honor-card">
+                    <h3>「全系第一名畢業」</h3>
+                    <p>在扎實的資工訓練下，同時取得乙級數位電子、ICT 計算機綜合能力國際認證等多張證照。</p>
+                    <strong>臺北城市科技大學 資訊工程系</strong>
+                </article>
+            </div>
+        </section>
+
+        <!-- 8. 聯絡 (語意化：使用 address 與 tel/mailto 連結) -->
+        <section class="cta" id="contact">
+            <div class="cta-text">
+                <h2>
+                    若你想與我一起打造<br>有價值的技術應用，<br>
+                    <span class="oval-light">請聯絡我。</span>
+                </h2>
+                <p>也歡迎先瀏覽我的 <a href="resume.html">個人履歷</a>與 <a href="projects.html">專題作品</a>。</p>
+            </div>
+            
+            <address class="cta-contact">
+                <div class="contact-row">
+                    <div class="contact-circle" aria-hidden="true">☎</div>
+                    <div>
+                        <span class="contact-label">電話</span>
+                        <p><a href="tel:+886966553318">0966-553-318</a></p>
+                    </div>
+                </div>
+                <div class="contact-row">
+                    <div class="contact-circle" aria-hidden="true">✉</div>
+                    <div>
+                        <span class="contact-label">電子郵件</span>
+                        <p><a href="mailto:phoebe930720@gmail.com">phoebe930720@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-row">
+                    <div class="contact-circle" aria-hidden="true">⌖</div>
+                    <div>
+                        <span class="contact-label">所在地</span>
+                        <p>臺灣・新北市</p>
+                    </div>
+                </div>
+            </address>
+        </section>
+
+    </main>
+
+    <!-- 共用頁尾組件 -->
+    <site-footer></site-footer>
+
+</body>
+</html>

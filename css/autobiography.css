@@ -1,0 +1,219 @@
+/* ==============================
+   autobiography.css｜自傳頁（autobiography.html）專用樣式
+   ============================== */
+
+/* 1. 雜誌風作者引言 */
+.author-intro {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 48px;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto 80px auto;
+    padding: 40px 48px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.author-avatar img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #ffffff;
+    box-shadow: 0 4px 15px rgba(66, 107, 155, 0.15); /* 帶有主色的柔和陰影 */
+}
+
+.author-quote blockquote {
+    font-family: var(--serif);
+    font-size: 26px;
+    color: var(--primary);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.author-quote p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* ==========================================================
+   2. 章節式故事編排 (取代原本的卡片)
+   ========================================================== */
+.story-chapters {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.chapter {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 40px;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+/* 加上一條連貫的視覺引導線，串起所有故事 */
+.chapter::before {
+    content: '';
+    position: absolute;
+    left: 45px; /* 對齊數字的中間 */
+    top: 80px;
+    bottom: -60px;
+    width: 1px;
+    background: var(--line);
+    z-index: -1;
+}
+.chapter:last-child::before {
+    display: none; /* 最後一章不需要連線 */
+}
+
+.chapter-title {
+    text-align: right;
+}
+
+.chapter-num {
+    display: block;
+    font-family: var(--serif);
+    font-size: 72px;
+    font-weight: bold;
+    line-height: 1;
+    color: var(--primary-mist);
+    opacity: 0.4;
+    margin-bottom: -15px;
+}
+
+.chapter-title h2 {
+    font-size: 24px;
+    color: var(--ink);
+    position: relative;
+    z-index: 1;
+}
+
+.chapter-text {
+    padding-top: 36px;
+    color: #3b424d;
+    font-size: 16px;
+    line-height: 2;
+}
+
+.chapter-text p {
+    margin-bottom: 24px;
+}
+
+.chapter-text ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.chapter-text li {
+    margin-bottom: 16px;
+}
+
+.chapter-text strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* ==========================================================
+   3. 底部引導按鈕
+   ========================================================== */
+.autobio-next {
+    margin-top: 80px;
+    padding-top: 60px;
+    border-top: 1px dashed var(--line);
+    text-align: center;
+}
+
+.autobio-next h2 {
+    font-size: 24px;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.autobio-next p {
+    color: var(--muted);
+    margin-bottom: 28px;
+}
+
+.autobio-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.autobio-button {
+    display: inline-block;
+    padding: 12px 32px;
+    background-color: var(--primary);
+    color: #ffffff;
+    border: 1px solid var(--primary);
+    border-radius: 999px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.autobio-button:hover {
+    background-color: var(--primary-dark);
+}
+
+.autobio-button.secondary {
+    background-color: transparent;
+    color: var(--primary);
+}
+
+.autobio-button.secondary:hover {
+    background-color: var(--primary-soft);
+}
+
+/* ==========================================================
+   4. RWD 響應式手機版
+   ========================================================== */
+@media (max-width: 768px) {
+    .author-intro {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 24px;
+        padding: 32px 20px;
+        margin-bottom: 50px;
+    }
+    
+    .author-avatar {
+        width: 140px;
+        margin: 0 auto;
+    }
+
+    .chapter {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-bottom: 50px;
+    }
+    
+    .chapter::before {
+        display: none; /* 手機版隱藏直線 */
+    }
+    
+    .chapter-title {
+        text-align: left;
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 12px;
+    }
+    
+    .chapter-num {
+        font-size: 40px;
+        margin-bottom: 0;
+    }
+    
+    .chapter-text {
+        padding-top: 8px;
+    }
+}

@@ -1,0 +1,548 @@
+/* ==============================
+   home.css｜首頁（index.html）專用樣式
+   ============================== */
+
+/* ==========================================================
+   1. 全域滾動捕捉 (Scroll Snap) 與區塊滿版設定
+   ========================================================== */
+html {
+    scroll-snap-type: y mandatory; /* 強制捕捉 Y 軸滾動 */
+    scroll-behavior: smooth;       /* 讓點擊錨點(如"聯絡我")時平滑捲動 */
+}
+
+/* 讓首頁每個大區塊皆佔滿全螢幕並對齊頂部 */
+main > section, .hero-wrapper {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 80px; /* 預留上方導覽列空間 */
+    padding-bottom: 40px;
+}
+
+/* 讓共用頁尾也能順暢停靠在畫面底部 */
+site-footer {
+    scroll-snap-align: end;
+    display: block;
+}
+
+/* ==========================================================
+   2. 第一區塊：主視覺與成就色塊合併 (hero-wrapper)
+   ========================================================== */
+.hero-wrapper {
+    padding-bottom: 0; /* 強制取消底部留白，讓藍色色塊貼底 */
+}
+
+.home-hero {
+    flex: 1;
+    display: flex;
+    flex-direction: row;      /* ★ 改為橫向左右排列 */
+    justify-content: center;  /* 整個區塊在畫面上置中 */
+    align-items: center;      /* 讓照片與文字垂直對齊 */
+    gap: 70px;                /* ★ 照片與文字之間的間距 */
+    padding-top: 20px;
+    padding-bottom: 60px;
+    max-width: 1000px;        /* 限制最大寬度，讓排版更集中好看 */
+    margin: 0 auto;
+}
+
+/* 主視覺：個人照片 */
+.hero-photo {
+    display: block;
+    width: 250px;             /* 左右排列時，照片可以稍微再大一點點更平衡 */
+    height: 250px;
+    margin: 0;                /* ★ 取消原本的置中外距 */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--cream);
+    box-shadow: 0 0 0 2px var(--primary), 0 10px 25px rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;           /* 確保照片不會被右邊文字擠壓變形 */
+}
+
+.hero-text {
+    text-align: left;         /* ★ 文字一律靠左對齊 */
+}
+
+.home-hero h1 {
+    margin-bottom: 24px;
+    font-size: clamp(36px, 5vw, 60px);
+    letter-spacing: 2px;
+}
+
+.home-hero h1 span {
+    color: var(--primary);
+}
+
+/* 4. 聯絡我：從純文字升級為「膠囊按鈕」 */
+.home-hero a {
+    display: inline-block;
+    padding: 14px 40px;
+    background-color: var(--primary);
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 2px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(66, 107, 155, 0.2);
+}
+
+.home-hero a:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(66, 107, 155, 0.3);
+}
+
+.hero-tagline {
+    max-width: 520px;
+    margin: 0 0 36px 0;       /* ★ 取消置中，改為只有下方留白 */
+    font-size: 16px;
+    color: #4a525e;
+    line-height: 2;
+}
+
+/* 底部藍色成就色塊 */
+.band {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    padding: 40px 6%;
+    background: var(--primary);
+    color: #ffffff;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.band-item {
+    padding: 8px 16px; 
+    border-right: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.band-item:last-child {
+    border-right: none;
+}
+
+.band-item strong {
+    display: block;
+    margin-bottom: 8px;
+    font-family: var(--serif);
+    font-size: 24px; /* 數字稍微放大 */
+    font-weight: 700;
+}
+
+.band-item span {
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px; 
+    line-height: 1.6;
+}
+/* ==========================================================
+   3. 關於我區塊
+   ========================================================== */
+.about {
+    margin-top: 0 !important;
+    padding-top: 80px !important;
+    display: flex;
+    flex-direction: row; /* ✨ 關鍵修正：強制改回左右排列 */
+    align-items: center;
+    padding-left: 8%;    /* 補上左右留白，才不會貼齊螢幕邊緣 */
+    padding-right: 8%;
+    gap: 40px;           /* 增加文字與照片之間的呼吸空間 */
+}
+
+.about-text {
+    flex: 1; 
+    padding-right: 0; 
+    padding-bottom: 56px;
+}
+
+.about-text p {
+    margin-bottom: 14px;
+    color: #4a525e;
+    font-size: 15px;
+}
+
+.about-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    margin-top: 26px;
+}
+
+/* 照片比例修正 */
+.arch-photo {
+    flex: 1;
+    max-width: 400px; /* 限制照片最大寬度 */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.arch-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 999px 999px 0 0;
+}
+
+/* ==========================================================
+   4. 通用區塊與背景
+   ========================================================== */
+.section {
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.section-tint {
+    background: var(--paper);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.section-heading {
+    margin-bottom: 52px;
+    color: var(--primary);
+    font-size: clamp(28px, 4vw, 36px);
+}
+
+.section-heading + .section-sub {
+    margin-top: -36px;
+    margin-bottom: 44px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* 背景：圓形徽章 */
+.circle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.circle-badge {
+    display: grid;
+    place-items: center;
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: var(--primary);
+    border: 3px double var(--cream);
+    box-shadow: 0 0 0 2px var(--primary);
+    color: #ffffff;
+    font-family: var(--serif);
+    font-size: 17px;
+}
+
+.circle-item h3 {
+    font-size: 19px;
+}
+
+.circle-rule {
+    height: 1px;
+    margin: 14px 0;
+    background: var(--primary);
+    opacity: 0.55;
+}
+
+.circle-label {
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.circle-date {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ==========================================================
+   5. 核心專長：拱形卡片
+   ========================================================== */
+.arch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.arch-top {
+    display: grid;
+    place-items: center;
+    height: 230px;
+    margin-bottom: 22px;
+    border-radius: 999px 999px 0 0;
+}
+
+.arch-top span {
+    color: var(--primary);
+    font-family: var(--serif);
+    font-size: 54px;
+    opacity: 0.85;
+}
+
+.tone-a { background: var(--primary-soft); }
+.tone-b { background: var(--sand); }
+.tone-c { background: var(--primary-mist); }
+
+.arch-card h3 {
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.arch-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ==========================================================
+   6. 專案展示
+   ========================================================== */
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto 44px;
+}
+
+.work-item {
+    color: inherit;
+    text-decoration: none;
+}
+
+.work-tile {
+    display: flex;
+    align-items: flex-end;
+    aspect-ratio: 1 / 1;
+    padding: 22px;
+    margin-bottom: 12px;
+    text-align: left;
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.6;
+    transition: transform 0.3s;
+}
+
+.work-item:hover .work-tile {
+    transform: translateY(-6px);
+}
+
+.tile-primary { background: var(--primary); color: #ffffff; }
+.tile-deep    { background: var(--deep); color: var(--cream); }
+.tile-sand    { background: var(--sand); color: var(--deep); }
+.tile-soft    { background: var(--primary-soft); color: var(--primary-dark); }
+
+.work-item p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ==========================================================
+   7. 榮譽與成就
+   ========================================================== */
+.honors {
+    padding: 100px 8%;
+    background: var(--deep);
+    color: var(--cream);
+    text-align: center;
+}
+
+.honors .section-heading {
+    color: var(--cream);
+}
+
+.honor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.honor-card h3 {
+    margin-bottom: 14px;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.honor-card p {
+    margin-bottom: 14px;
+    color: #c3cedd;
+    font-size: 14px;
+}
+
+.honor-card strong {
+    display: block;
+    padding-top: 12px;
+    border-top: 1px solid rgba(245, 241, 232, 0.3);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* ==========================================================
+   8. 聯絡區塊
+   ========================================================== */
+.cta {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    align-items: center;
+    gap: 56px;
+    padding: 96px 8%;
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.cta-text h2 {
+    margin-bottom: 22px;
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+.oval-light {
+    display: inline-block;
+    padding: 0 22px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    transform: rotate(-2deg);
+}
+
+.cta-text p {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 14px;
+}
+
+.cta-text a {
+    color: #ffffff;
+    text-underline-offset: 4px;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 26px;
+}
+
+.contact-circle {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--cream);
+    color: var(--primary);
+    font-size: 22px;
+}
+
+.contact-row span {
+    display: block;
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+.contact-row p {
+    font-family: var(--serif);
+    font-size: 18px;
+    overflow-wrap: anywhere;
+}
+
+.contact-row a {
+    color: #ffffff;              /* 改為純白色，與深藍背景形成強烈對比 */
+    text-decoration: underline;  /* 加上底線提示這是一個可以點擊的連結 */
+    text-underline-offset: 4px;  /* 讓底線稍微往下移，排版會更好看 */
+    font-weight: 700;            /* 將字體加粗，更顯眼 */
+    transition: opacity 0.2s;    /* 加上滑鼠互動的漸變時間 */
+}
+
+/* 滑鼠移過去時的變化 */
+.contact-row a:hover {
+    opacity: 0.7;                /* 游標移上去時稍微變半透明，增加點擊回饋感 */
+    text-decoration: underline;  
+}
+/* ==========================================================
+   9. RWD 響應式設計 (平板與手機版)
+   ========================================================== */
+@media (max-width: 960px) {
+    .band {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 28px;
+    }
+    .band-item:nth-child(2) {
+        border-right: none;
+    }
+    .work-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .home-hero {
+        padding: 48px 20px 56px;
+    }
+
+    .about {
+        flex-direction: column; /* 改為垂直排列 */
+        gap: 36px;
+        padding-top: 64px !important;
+        text-align: center;
+    }
+
+    .about-text {
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+
+    .about-links {
+        justify-content: center;
+    }
+
+    .arch-photo {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .section,
+    .honors {
+        padding: 64px 6%;
+    }
+
+    .circle-grid,
+    .arch-grid,
+    .honor-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 44px;
+    }
+
+    .arch-top {
+        height: 190px;
+    }
+
+    .cta {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 40px;
+        padding: 64px 8%;
+    }
+}
+
+@media (max-width: 520px) {
+    .band {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 40px 8%;
+    }
+    .band-item {
+        border-right: none;
+        padding: 10px 0;
+    }
+    .work-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
