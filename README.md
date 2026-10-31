@@ -23,7 +23,6 @@ phoebe-website/
 ├── css/
 │   ├── variables.css       # 設計變數（色彩、字型）
 │   ├── base.css            # 全站共用樣式
-│   ├── components.css      # 共用元件樣式
 │   ├── home.css            # 首頁
 │   ├── resume.css          # 個人履歷頁
 │   ├── projects.css        # 專題作品頁
